@@ -1,0 +1,32 @@
+[
+  {
+    "id": "feed",
+    "label": "Feed",
+    "href": "/feed",
+    "icon": "HomeIcon"
+  },
+  {
+    "id": "classes",
+    "label": "Classes",
+    "href": "/classes",
+    "icon": "ChartBarIcon"
+  },
+  {
+    "id": "qr",
+    "label": "QR",
+    "href": "/qr",
+    "icon": "QrCodeIcon"
+  },
+  {
+    "id": "stats",
+    "label": "Stats",
+    "href": "/stats",
+    "icon": "PresentationChartLineIcon"
+  },
+  {
+    "id": "profile",
+    "label": "Profile",
+    "href": "/profile",
+    "icon": "UserIcon"
+  }
+]
