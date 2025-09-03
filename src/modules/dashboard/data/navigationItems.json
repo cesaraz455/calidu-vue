@@ -2,31 +2,31 @@
   {
     "id": "feed",
     "label": "Feed",
-    "href": "/feed",
-    "icon": "HomeIcon"
+    "href": "/dashboard/feed",
+    "icon": "mdi-home"
   },
   {
     "id": "classes",
     "label": "Classes",
-    "href": "/classes",
-    "icon": "ChartBarIcon"
+    "href": "/dashboard/classes",
+    "icon": "mdi-chart-bar"
   },
   {
     "id": "qr",
     "label": "QR",
-    "href": "/qr",
-    "icon": "QrCodeIcon"
+    "href": "/dashboard/qr",
+    "icon": "mdi-qrcode"
   },
   {
     "id": "stats",
     "label": "Stats",
-    "href": "/stats",
-    "icon": "PresentationChartLineIcon"
+    "href": "/dashboard/stats",
+    "icon": "mdi-chart-line"
   },
   {
     "id": "profile",
     "label": "Profile",
-    "href": "/profile",
-    "icon": "UserIcon"
+    "href": "/dashboard/profile",
+    "icon": "mdi-account"
   }
 ]

@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import MenuBar from './components/MenuBar.vue'
+import NavigationDrawer from './components/NavigationDrawer.vue';
+import BottomNavigation from './components/BottomNavigation.vue';
 </script>
 
 <template>
-  <router-view />
-  <menu-bar />
+  <navigation-drawer v-if="$vuetify.display.mdAndUp" />
+  <bottom-navigation v-else />
+
+  <v-main>
+    <router-view />
+  </v-main>
 </template>
 
 <style></style>
