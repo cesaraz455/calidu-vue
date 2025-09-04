@@ -35,6 +35,7 @@ npm run build
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
+# Run tests with coverage report
 npm run test
 ```
 

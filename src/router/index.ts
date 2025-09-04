@@ -9,11 +9,6 @@ const router = createRouter({
       component: () => import('@modules/home/HomeView.vue'),
     },
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('@modules/login/LoginView.vue'),
-    },
-    {
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('@modules/dashboard/DashboardView.vue'),
@@ -23,11 +18,6 @@ const router = createRouter({
           redirect: {
             name: 'feed',
           },
-        },
-        {
-          path: 'feed',
-          name: 'feed',
-          component: () => import('@modules/feed/FeedView.vue'),
         },
       ],
     },
