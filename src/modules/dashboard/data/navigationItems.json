@@ -1,0 +1,32 @@
+[
+  {
+    "id": "feed",
+    "label": "Feed",
+    "href": "/dashboard/feed",
+    "icon": "mdi-home"
+  },
+  {
+    "id": "classes",
+    "label": "Classes",
+    "href": "/dashboard/classes",
+    "icon": "mdi-chart-bar"
+  },
+  {
+    "id": "qr",
+    "label": "QR",
+    "href": "/dashboard/qr",
+    "icon": "mdi-qrcode"
+  },
+  {
+    "id": "stats",
+    "label": "Stats",
+    "href": "/dashboard/stats",
+    "icon": "mdi-chart-line"
+  },
+  {
+    "id": "profile",
+    "label": "Profile",
+    "href": "/dashboard/profile",
+    "icon": "mdi-account"
+  }
+]
