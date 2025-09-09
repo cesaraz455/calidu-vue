@@ -24,6 +24,26 @@ const router = createRouter({
           name: 'feed',
           component: () => import('@modules/feed/FeedView.vue'),
         },
+        {
+          path: 'classes',
+          name: 'classes',
+          component: () => import('@modules/classes/ClassesView.vue'),
+        },
+        {
+          path: 'qr',
+          name: 'qr',
+          component: () => import('@modules/qr/QrView.vue'),
+        },
+        {
+          path: 'stats',
+          name: 'stats',
+          component: () => import('@modules/stats/StatsView.vue'),
+        },
+        {
+          path: 'profile',
+          name: 'profile',
+          component: () => import('@modules/profile/ProfileView.vue'),
+        },
       ],
     },
   ],
