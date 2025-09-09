@@ -19,6 +19,11 @@ const router = createRouter({
             name: 'feed',
           },
         },
+        {
+          path: 'feed',
+          name: 'feed',
+          component: () => import('@modules/feed/FeedView.vue'),
+        },
       ],
     },
   ],

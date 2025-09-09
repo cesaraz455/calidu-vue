@@ -52,9 +52,11 @@ describe('IconButton', () => {
   it('applies default props correctly', () => {
     const wrapper = createWrapper();
     const button = wrapper.find('.v-btn');
+    const icon = wrapper.find('.v-icon');
 
     expect(button.classes()).toContain('v-btn--variant-text');
     expect(button.classes()).toContain('v-btn--size-small');
+    expect(icon.classes()).toContain('v-icon--size-small');
   });
 
   it('applies custom variant prop', () => {
@@ -64,11 +66,18 @@ describe('IconButton', () => {
     expect(button.classes()).toContain('v-btn--variant-outlined');
   });
 
-  it('applies custom size prop', () => {
-    const wrapper = createWrapper({ size: 'large' });
+  it('applies custom btnSize prop', () => {
+    const wrapper = createWrapper({ btnSize: 'large' });
     const button = wrapper.find('.v-btn');
 
     expect(button.classes()).toContain('v-btn--size-large');
+  });
+
+  it('applies custom iconSize prop', () => {
+    const wrapper = createWrapper({ iconSize: 'large' });
+    const icon = wrapper.find('.v-icon');
+
+    expect(icon.classes()).toContain('v-icon--size-large');
   });
 
   it('applies aria-label when provided', () => {
@@ -124,14 +133,25 @@ describe('IconButton', () => {
     });
   });
 
-  it('supports all size options', () => {
+  it('supports all btnSize options', () => {
     const sizes = ['x-small', 'small', 'default', 'large', 'x-large'];
 
     sizes.forEach((size) => {
-      const wrapper = createWrapper({ size });
+      const wrapper = createWrapper({ btnSize: size });
       const button = wrapper.find('.v-btn');
 
       expect(button.classes()).toContain(`v-btn--size-${size}`);
+    });
+  });
+
+  it('supports all iconSize options', () => {
+    const sizes = ['x-small', 'small', 'default', 'large', 'x-large'];
+
+    sizes.forEach((size) => {
+      const wrapper = createWrapper({ iconSize: size });
+      const icon = wrapper.find('.v-icon');
+
+      expect(icon.classes()).toContain(`v-icon--size-${size}`);
     });
   });
 
@@ -207,5 +227,35 @@ describe('IconButton', () => {
 
     expect(button.attributes('aria-label')).toBe('Open navigation menu');
     expect(button.element.tagName.toLowerCase()).toBe('button');
+  });
+
+  it('allows independent sizing of button and icon', () => {
+    const wrapper = createWrapper({
+      btnSize: 'large',
+      iconSize: 'x-small',
+    });
+    const button = wrapper.find('.v-btn');
+    const icon = wrapper.find('.v-icon');
+
+    expect(button.classes()).toContain('v-btn--size-large');
+    expect(icon.classes()).toContain('v-icon--size-x-small');
+  });
+
+  it('applies default iconSize when only btnSize is provided', () => {
+    const wrapper = createWrapper({ btnSize: 'x-large' });
+    const button = wrapper.find('.v-btn');
+    const icon = wrapper.find('.v-icon');
+
+    expect(button.classes()).toContain('v-btn--size-x-large');
+    expect(icon.classes()).toContain('v-icon--size-small');
+  });
+
+  it('applies default btnSize when only iconSize is provided', () => {
+    const wrapper = createWrapper({ iconSize: 'x-large' });
+    const button = wrapper.find('.v-btn');
+    const icon = wrapper.find('.v-icon');
+
+    expect(button.classes()).toContain('v-btn--size-small');
+    expect(icon.classes()).toContain('v-icon--size-x-large');
   });
 });

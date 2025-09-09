@@ -10,6 +10,13 @@ const rail = ref<boolean>(true);
 const { isActiveRoute } = useNavigation();
 
 const navigationItems: NavigationItem[] = navigationItemsData;
+
+const MENU_LABELS = {
+  COLLAPSE: 'Colapsar menú',
+  EXPAND: 'Expandir menú',
+} as const;
+
+const MENU_ICON_SIZE = 19;
 </script>
 
 <template>
@@ -17,9 +24,10 @@ const navigationItems: NavigationItem[] = navigationItemsData;
     permanent
     :rail="rail"
     :rail-width="75"
-    color="grey-darken-3"
+    color="deep-purple-lighten-5"
     @click="rail = false"
-    theme="dark"
+    :elevation="1"
+    :border="0"
   >
     <v-list-item class="px-5 py-3">
       <template v-slot:prepend>
@@ -27,7 +35,8 @@ const navigationItems: NavigationItem[] = navigationItemsData;
           v-if="rail"
           icon="mdi-menu"
           @click.stop="rail = !rail"
-          :aria-label="rail ? 'Colapsar menú' : 'Expandir menú'"
+          :aria-label="rail ? MENU_LABELS.COLLAPSE : MENU_LABELS.EXPAND"
+          :icon-size="MENU_ICON_SIZE"
         />
         <div class="d-flex align-center" v-else>
           <CaliduIcon size="md" class="me-3" />
@@ -38,12 +47,11 @@ const navigationItems: NavigationItem[] = navigationItemsData;
         <IconButton
           icon="mdi-menu"
           @click.stop="rail = !rail"
-          :aria-label="rail ? 'Colapsar menú' : 'Expandir menú'"
+          :aria-label="rail ? MENU_LABELS.COLLAPSE : MENU_LABELS.EXPAND"
+          :icon-size="MENU_ICON_SIZE"
         />
       </template>
     </v-list-item>
-
-    <v-divider></v-divider>
 
     <v-list density="compact" nav>
       <v-list-item
@@ -61,4 +69,23 @@ const navigationItems: NavigationItem[] = navigationItemsData;
   </v-navigation-drawer>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+:deep(.v-list-item--active) {
+  .v-icon,
+  .v-list-item-title {
+    color: rgb(var(--v-theme-primary));
+  }
+}
+
+.v-navigation-drawer {
+  :deep(.v-list-item__overlay) {
+    background: rgba(var(--v-theme-primary), 0.9);
+  }
+}
+
+.v-navigation-drawer--rail {
+  :deep(.v-list-item__overlay) {
+    background: transparent;
+  }
+}
+</style>

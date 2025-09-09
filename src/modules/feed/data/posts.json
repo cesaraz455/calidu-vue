@@ -1,0 +1,62 @@
+[
+  {
+    "id": "a7f3b2e9c1d4",
+    "startedUserName": "John Martinez",
+    "creatorUserName": "Sarah Rodriguez",
+    "numberOfStarts": 4,
+    "description": "Thank you Professor Rodriguez for the amazing calculus lecture today! Your explanation of derivatives finally made everything click for me. Looking forward to tomorrow's class! 📚",
+    "numberOfLikes": 127,
+    "numberOfComments": 23,
+    "numberOfShares": 8,
+    "creatorProfilePictureUrl": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    "startedUserProfilePictureUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "id": "b8e4c3f0d2a5",
+    "startedUserName": "Maria Gonzalez",
+    "creatorUserName": "anonymous",
+    "numberOfStarts": 2,
+    "description": null,
+    "numberOfLikes": 45,
+    "numberOfComments": 7,
+    "numberOfShares": 3,
+    "creatorProfilePictureUrl": null,
+    "startedUserProfilePictureUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "id": "c9f5d4a1e3b6",
+    "startedUserName": "Alex Thompson",
+    "creatorUserName": "Michael Johnson",
+    "numberOfStarts": 5,
+    "description": "Professor Johnson, your chemistry lab demonstration was incredible! The way you explained molecular bonds made it so much easier to understand. Thank you for being such an inspiring teacher! 🧪",
+    "numberOfLikes": 289,
+    "numberOfComments": 41,
+    "numberOfShares": 15,
+    "creatorProfilePictureUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    "startedUserProfilePictureUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "id": "d0a6e5b2f4c7",
+    "startedUserName": "Emma Davis",
+    "creatorUserName": "anonymous",
+    "numberOfStarts": 1,
+    "description": "Really appreciate how patient Professor Williams was during office hours today. She took the time to explain the physics concepts until I understood them completely. Best professor ever!",
+    "numberOfLikes": 67,
+    "numberOfComments": 12,
+    "numberOfShares": 2,
+    "creatorProfilePictureUrl": null,
+    "startedUserProfilePictureUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "id": "e1b7f6c3a5d8",
+    "startedUserName": "David Brown",
+    "creatorUserName": "Lisa Martinez",
+    "numberOfStarts": 3,
+    "description": null,
+    "numberOfLikes": 156,
+    "numberOfComments": 28,
+    "numberOfShares": 11,
+    "creatorProfilePictureUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
+    "startedUserProfilePictureUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+  }
+]

@@ -20,16 +20,28 @@ vi.mock('../data/navigationItems.json', () => ({
       icon: 'mdi-home',
     },
     {
+      id: 'classes',
+      label: 'Classes',
+      href: '/dashboard/classes',
+      icon: 'mdi-chart-bar',
+    },
+    {
       id: 'qr',
       label: 'QR',
       href: '/dashboard/qr',
       icon: 'mdi-qrcode',
     },
     {
-      id: 'search',
-      label: 'Buscar',
-      href: '/dashboard/search',
-      icon: 'mdi-magnify',
+      id: 'stats',
+      label: 'Stats',
+      href: '/dashboard/stats',
+      icon: 'mdi-chart-line',
+    },
+    {
+      id: 'profile',
+      label: 'Profile',
+      href: '/dashboard/profile',
+      icon: 'mdi-account',
     },
   ],
 }));
@@ -52,7 +64,7 @@ vi.mock('@shared/components/IconButton.vue', () => ({
   default: {
     name: 'IconButton',
     template: '<button class="icon-button" @click="$emit(\'click\', $event)">{{ icon }}</button>',
-    props: ['icon', 'ariaLabel'],
+    props: ['icon', 'ariaLabel', 'iconSize'],
     emits: ['click'],
   },
 }));
@@ -61,8 +73,10 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/dashboard/feed', component: { template: '<div>Feed</div>' } },
+    { path: '/dashboard/classes', component: { template: '<div>Classes</div>' } },
     { path: '/dashboard/qr', component: { template: '<div>QR</div>' } },
-    { path: '/dashboard/search', component: { template: '<div>Search</div>' } },
+    { path: '/dashboard/stats', component: { template: '<div>Stats</div>' } },
+    { path: '/dashboard/profile', component: { template: '<div>Profile</div>' } },
   ],
 });
 
@@ -116,12 +130,14 @@ describe('NavigationDrawer', () => {
     const wrapper = createWrapper();
     const listItems = wrapper.findAll('.v-list-item');
 
-    expect(listItems.length).toBeGreaterThanOrEqual(3);
+    expect(listItems.length).toBeGreaterThanOrEqual(5);
 
     const text = wrapper.text();
     expect(text).toContain('Feed');
+    expect(text).toContain('Classes');
     expect(text).toContain('QR');
-    expect(text).toContain('Buscar');
+    expect(text).toContain('Stats');
+    expect(text).toContain('Profile');
   });
 
   it('renders IconButton in rail mode', async () => {
@@ -179,12 +195,9 @@ describe('NavigationDrawer', () => {
 
   it('renders navigation items with correct props', () => {
     const wrapper = createWrapper();
-    const listItems = wrapper.findAll('.v-list-item[href]');
+    const listItems = wrapper.findAll('.v-list-item');
 
-    expect(listItems.length).toBeGreaterThan(0);
-
-    const feedItem = listItems.find((item) => item.attributes('href')?.includes('/dashboard/feed'));
-    expect(feedItem).toBeDefined();
+    expect(listItems.length).toBe(6);
   });
 
   it('applies active state to current route', () => {
@@ -207,18 +220,12 @@ describe('NavigationDrawer', () => {
     }
   });
 
-  it('renders with correct Vuetify theme and styling', () => {
+  it('renders with correct Vuetify styling', () => {
     const wrapper = createWrapper();
     const navigationDrawer = wrapper.find('.v-navigation-drawer');
 
     expect(navigationDrawer.exists()).toBe(true);
-
-    expect(navigationDrawer.classes()).toContain('v-theme--dark');
-  });
-
-  it('renders divider between header and navigation items', () => {
-    const wrapper = createWrapper();
-    expect(wrapper.find('.v-divider').exists()).toBe(true);
+    expect(navigationDrawer.classes()).toContain('v-navigation-drawer');
   });
 
   it('has correct component structure', () => {

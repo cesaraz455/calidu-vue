@@ -1,14 +1,18 @@
 <script setup lang="ts">
+import type { VBtn, VIcon } from 'vuetify/components';
+
 interface Props {
   icon: string;
-  variant?: 'text' | 'outlined' | 'flat' | 'elevated' | 'tonal' | 'plain';
-  size?: 'x-small' | 'small' | 'default' | 'large' | 'x-large';
+  variant?: VBtn['$props']['variant'];
+  btnSize?: VBtn['$props']['size'];
+  iconSize?: VIcon['$props']['size'];
   ariaLabel?: string;
 }
 
 withDefaults(defineProps<Props>(), {
   variant: 'text',
-  size: 'small',
+  btnSize: 'small',
+  iconSize: 'small',
 });
 
 defineEmits<{
@@ -20,10 +24,10 @@ defineEmits<{
   <v-btn
     :icon="true"
     :variant="variant"
-    :size="size"
+    :size="btnSize"
     :aria-label="ariaLabel"
     @click="$emit('click', $event)"
   >
-    <v-icon>{{ icon }}</v-icon>
+    <v-icon :size="iconSize">{{ icon }}</v-icon>
   </v-btn>
 </template>
