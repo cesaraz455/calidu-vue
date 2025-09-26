@@ -6,7 +6,7 @@ import { useNavigation } from '@shared/composables/useNavigation';
 import navigationItemsData from '../data/navigationItems.json';
 import type { NavigationItem } from '@shared/types/navigation';
 
-const rail = ref<boolean>(true);
+const rail = ref<boolean>(false);
 const { isActiveRoute } = useNavigation();
 
 const navigationItems: NavigationItem[] = navigationItemsData;
@@ -24,9 +24,8 @@ const MENU_ICON_SIZE = 19;
     permanent
     :rail="rail"
     :rail-width="75"
-    color="deep-purple-lighten-5"
     @click="rail = false"
-    :elevation="1"
+    :elevation="3"
     :border="0"
   >
     <v-list-item class="px-5 py-3">
@@ -60,7 +59,7 @@ const MENU_ICON_SIZE = 19;
         :to="item.href"
         :active="isActiveRoute(item.href)"
         :prepend-icon="item.icon"
-        :title="item.label"
+        :title="item.labelDesktop"
         rounded="e-xl"
         class="mx-3 mb-1"
       >

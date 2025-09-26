@@ -7,7 +7,7 @@ import BottomNavigation from './components/BottomNavigation.vue';
   <navigation-drawer v-if="$vuetify.display.mdAndUp" />
   <bottom-navigation v-else />
 
-  <v-main>
+  <v-main class="bg-blue-grey-lighten-5">
     <router-view />
   </v-main>
 </template>

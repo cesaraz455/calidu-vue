@@ -1,6 +1,7 @@
 export interface NavigationItem {
-  id: string
-  label: string
-  href: string
-  icon: string
+  id: string;
+  labelDesktop: string;
+  labelMobile: string;
+  href: string;
+  icon: string;
 }

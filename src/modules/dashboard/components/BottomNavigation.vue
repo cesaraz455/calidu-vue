@@ -19,7 +19,7 @@ const navigationItems: NavigationItem[] = navigationItemsData;
         size="small"
       >
         <v-icon>{{ item.icon }}</v-icon>
-        <span class="text-caption">{{ item.label }}</span>
+        <span class="text-caption">{{ item.labelMobile }}</span>
       </v-btn>
     </v-bottom-navigation>
   </nav>
